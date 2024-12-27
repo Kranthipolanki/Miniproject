@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    char operator;
+    double n1, n2, result;
+    printf("Enter an operator (+, -, *, /, ^, sqrt, %, sin, cos, tan, log): \n");
+    scanf(" %c", &operator);
+    switch (operator) 
+    {
+        case '+':
+            printf("Enter two numbers: \n");
+            scanf("%lf %lf", &n1, &n2);
+            result = n1 + n2;
+            printf("%lf + %lf = %.2lf\n", n1, n2, result);
+            break;
+        case '-':
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &n1, &n2);
+            result = n1 - n2;
+            printf("%lf - %lf = %.2lf\n", n1, n2, result);
+            break;
+        case '*':
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &n1, &n2);
+            result = n1 * n2;
+            printf("%lf * %lf = %.2lf\n", n1, n2, result);
+            break;
+        case '/':
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &n1, &n2);
+            if (n2 == 0) {
+                printf("Error: Division by zero!\n");
+            } else {
+                result = n1 / n2;
+                printf("%lf / %lf = %.2lf\n", n1, n2, result);
+            }
+            break;
+        case '^':
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &n1, &n2);
+            result = pow(n1, n2);
+            printf("%lf ^ %lf = %.2lf\n", n1, n2, result);
+            break;
+        case 's':
+            printf("Enter a number: ");
+            scanf("%lf", &n1);
+            result = sqrt(n1);
+            printf("sqrt(%lf) = %.2lf\n", n1, result);
+            break;
+        case '%':
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &n1, &n2);
+            result = (n1 / 100) * n2;
+            printf("%lf%% of %lf = %.2lf\n", n1, n2, result);
+            break;
+        case 'l':
+            printf("Enter a number: ");
+            scanf("%lf", &n1);
+            result = log10(n1);
+            printf("log10(%lf) = %.2lf\n", n1, result);
+            break;
+        case 'S':
+            printf("Enter an angle in degrees: ");
+            scanf("%lf", &n1);
+            result = sin(n1 * M_PI / 180); 
+            printf("sin(%lf) = %.2lf\n", n1, result);
+            break;
+        case 'C':
+            printf("Enter an angle in degrees: ");
+            scanf("%lf", &n1);
+            result = cos(n1 * M_PI / 180); 
+            printf("cos(%lf) = %.2lf\n", n1, result);
+            break;
+        case 'T':
+            printf("Enter an angle in degrees: ");
+            scanf("%lf", &n1);
+            result = tan(n1 * M_PI / 180); 
+            printf("tan(%lf) = %.2lf\n", n1, result);
+            break;
+        default:
+            printf("Error: Invalid operator.\n");
+    }
+
+    return 0;
+} 
